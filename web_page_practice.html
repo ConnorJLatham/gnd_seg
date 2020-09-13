@@ -6,6 +6,21 @@ src="jquery-3.5.1.js"></script>
 <script 
 src="test_jquery_functions.js"></script>
 
+<script>
+ $.get('testing.txt', function(textData, status) {
+    var aLines = textData.split("\n")
+
+    alert(textData + '\nStatus = ' + status); 
+
+    $.each(aLines, function(n, sLine) {
+       $('#textFromFile').append('<div>' + sLine + '</div>'); 
+       alert(n + ' - ' + aLines[n]);
+    });
+    alert("File read OK");
+ }, 'text');
+</script>
+
+
 <title>My First Web Page</title>
 </head>
 <body>
